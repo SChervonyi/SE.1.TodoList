@@ -1,0 +1,2 @@
+1) Move karma config to config folder (https://angular.io/docs/ts/latest/guide/webpack.html, karma start ./config/karma.conf.js)
+2) Implement webpack build
