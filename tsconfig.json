@@ -9,9 +9,22 @@
     "lib": [ "es2015", "dom" ],
     "noImplicitAny": true,
     "suppressImplicitAnyIndexErrors": true,
-    "outDir": "dist/out-tsc",
+    "outDir": "dist",
+    "compileOnSave": false,
+    "rootDirs": [
+      "./src",
+      "./e2e"
+    ],
     "typeRoots": [
       "node_modules/@types"
     ]
-  }
+  },
+  "include": [
+    "src/**/*",
+    "e2e/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist"
+  ]
 }
