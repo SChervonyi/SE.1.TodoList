@@ -1,1 +1,21 @@
-<h1>Hello {{name}}</h1>
+<div>
+    <div>
+        <form (submit)="addTodo($event)">
+            <input [(ngModel)]="newTodo" (keyup.enter)="newTodo=''" name="newTodo"/>
+            <button type="submit" [disabled]="newTodo===''">Add</button>
+        </form>
+    </div>
+    <div [hidden]="newTodo">
+        Type in a new todo...
+    </div>
+    <div [hidden]="!newTodo">
+        Typing: {{ newTodo }}
+    </div>
+
+    <ul>
+        <li *ngFor="let todoItem of todos">
+            <input type="checkbox" [(ngModel)]="todoItem.completed"/>
+            <span>{{todoItem.newTodo}}</span>
+        </li>
+    </ul>
+</div>
