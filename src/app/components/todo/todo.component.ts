@@ -2,11 +2,10 @@ import { Component } from '@angular/core';
 type TodoObj = {newTodo : string, completed: boolean};
 
 @Component({
-  selector: 'my-app',
-  styleUrls: [ './app.component.css' ],
-  templateUrl: './app.component.html',
+  selector: 'todo',
+  templateUrl: './todo.component.html',
 })
-export class AppComponent  { 
+export class TodoComponent  { 
   public name: string = 'Angular'; 
 
   public newTodo: string = '';
