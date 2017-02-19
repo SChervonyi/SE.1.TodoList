@@ -2,6 +2,7 @@ var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var helpers = require('./helpers');
+const tslint = require('./tslint.json');
 
 module.exports = {
   entry: {
@@ -16,6 +17,16 @@ module.exports = {
 
   module: {
     rules: [
+      {
+          test: /\.ts$/,
+          enforce: 'pre',
+          loader: 'tslint-loader',
+          options: { 
+            configuration: tslint,
+            emitErrors: true,
+            failOnHint: true
+          }
+      },
       {
         test: /\.ts$/,
         loaders: ['awesome-typescript-loader', 'angular2-template-loader']
