@@ -3,7 +3,9 @@ import { Component } from '@angular/core';
 @Component({
     selector: 'hello-world',
     templateUrl: 'hello-world.component.html',
-    styleUrls: ['./hello-world.component.css']
+    styles: [
+        require('./hello-world.component.scss')
+    ]
 })
 export class HelloWorldComponent {
     public name: string = 'Ches';

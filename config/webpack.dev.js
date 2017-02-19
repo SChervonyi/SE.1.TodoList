@@ -13,6 +13,16 @@ module.exports = webpackMerge(commonConfig, {
     chunkFilename: '[id].chunk.js'
   },
 
+  module: {
+    rules: [
+      {
+        test: /\.scss$/,
+        use: ['to-string-loader', 'css-loader', 'sass-loader'],
+        include: [helpers.root('src', 'app')]
+      }
+    ]
+  },
+
   plugins: [
     new ExtractTextPlugin('[name].css')
   ],
